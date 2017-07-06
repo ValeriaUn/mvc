@@ -1,6 +1,0 @@
-[
-	{"id":1,"name":"Lera","job":"PHP Trainee","salary":300,"websCount":2},
-	{"id":2,"name":"Denis","job":"Senior PHP Developer","salary":1000,"websCount":1},
-	{"id":3,"name":"Andrew","job":"Senior PHP Trainee","salary":500,"websCount":1},
-	{"id":4,"name":"Maxim","job":"Java trainee","salary":1000,"websCount":0}
-]
