@@ -2,35 +2,27 @@
 
 namespace app\models;
 
+include "dataproviders/WebsitesProvider.php";
+
 use app\models\Users;
 
 class Websites
 {
 
+    public $websitesProvider;
+
+    public function __construct()
+    {
+
+        $this->websitesProvider = new WebsitesProvider();
+
+    }
+
     public function listOfWebsites()
     {
-        return [
-            (object)[
-                'id' => 1,
-                'user_id' => 1,
-                'name' => 'google.com',
-            ],
-            (object)[
-                'id' => 2,
-                'user_id' => 1,
-                'name' => 'yahoo.com',
-            ],
-            (object)[
-                'id' => 3,
-                'user_id' => 2,
-                'name' => 'yandex.ru',
-            ],
-            (object)[
-                'id' => 4,
-                'user_id' => 3,
-                'name' => 'rambler.ru',
-            ],
-        ];
+        $websites = $this->websitesProvider->readData();
+
+        return $websites;
     }
 
     public function getWebsitesListByUser($user_id)

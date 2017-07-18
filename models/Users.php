@@ -2,21 +2,25 @@
 
 namespace app\models;
 
+include "dataproviders/UserProvider.php";
+
 class Users
 {
     public $websitesModel;
+    public $usersProvider;
 
     public function __construct()
     {
 
         $this->websitesModel = new Websites();
+        $this->usersProvider = new UserProvider();
 
     }
 
     public function listOfUsers()
     {
 
-        $users = json_decode(file_get_contents(__DIR__.'/users.json'));
+        $users = $this->usersProvider->readData();
 
         return $users;
     }
